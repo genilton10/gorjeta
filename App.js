@@ -1,21 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import styled from 'styled-components';
+import { Text } from 'react-native';
 
-export default function App() {
+const Pagina = styled.SafeAreaView`
+  flex: 1;
+  align-items: center;
+`;
+
+const Cabecalho = styled.Text`
+  margin-top: 10px;
+  font-size: 25px;
+`;
+const Input = styled.TextInput`
+  width: 90%;
+  height: 50px;
+  font-size: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 11px;
+`;
+
+const CalcularBtn = styled.Button`
+`;
+
+export default () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Pagina>
+      <Cabecalho>Calculadora de Gorjeta</Cabecalho>
+      <Input placeholder="Quanto deu a conta? " kyboardType="numeric" />
+      <CalcularBtn title="Calcular 10%" />
+    </Pagina>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+};
