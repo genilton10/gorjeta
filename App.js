@@ -54,6 +54,7 @@ export default () => {
       <Cabecalho>Calculadora de Gorjeta</Cabecalho>
       <Input placeholder="Quanto deu a conta? " kyboardType="numeric" value={conta} onChangeText={(valor) => alteraConta(valor)} />
       <CalcularBtn title="Calcular 10%" />
+      {conta > 0 && 
       <AreaResultado>
         <TituloResultado>Valor da Conta</TituloResultado>
         <ItemResultado>R${parseFloat(conta).toFixed(2)}</ItemResultado>
@@ -62,6 +63,7 @@ export default () => {
         <TituloResultado>Valor Total</TituloResultado>
         <ItemResultado>{(conta * 1.1).toFixed(2)}</ItemResultado>
       </AreaResultado>
+      }
     </Pagina>
   );
 };
